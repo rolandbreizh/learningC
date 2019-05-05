@@ -1,21 +1,19 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-double moyenneTableau(int tableau[], int tailleTableau);
+#include "treizieme.h"
 
 int main()
 {
     int tableau[5] = {132, 766, 9, 656, 87};
-
-    moyenneTableau(tableau, 5);
-
+    printf("%f\n", moyenneTableau(tableau, 5));
     return 0;
 }
 
 double moyenneTableau(int tableau[], int tailleTableau)
 {
-    int i;
-
-    i = (tableau[5] / tailleTableau);
-    printf("%d\n", tableau[i]);
+    double tmp = tableau[0];
+    for(int i = 0; i < tailleTableau; i++)
+    {
+        tmp = tmp + tableau[i];
+    }
+    tmp = tmp / tailleTableau;
+    return tmp;
 }
